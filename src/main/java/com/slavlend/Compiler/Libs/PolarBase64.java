@@ -1,6 +1,6 @@
 package com.slavlend.Compiler.Libs;
 import java.util.Base64;
-public class Base64 {
+public class PolarBase64 {
 	public byte[] encode (byte[] in) {
 		return Base64.getEncoder().encode(in);
 	}
