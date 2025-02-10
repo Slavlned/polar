@@ -1,5 +1,5 @@
 class Base64() {
-    mod reflected = reflect 'com.slavlend.Compiler.Libs.Base64' []
+    mod reflected = reflect 'com.slavlend.Compiler.Libs.PolarBase64' []
     mod func encode(in) {
         return reflected.encode(in)
     }
