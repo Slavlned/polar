@@ -92,14 +92,28 @@ public class Parser {
 
     public Operator condOperator() {
         // перебор операторов
-        return switch (tokens.get(current).type) {
-            case EQUAL -> new Operator(consume(TokenType.EQUAL).value);
-            case NOT_EQUAL -> new Operator(consume(TokenType.NOT_EQUAL).value);
-            case LOWER -> new Operator(consume(TokenType.LOWER).value);
-            case BIGGER -> new Operator(consume(TokenType.BIGGER).value);
-            case LOWER_EQUAL -> new Operator(consume(TokenType.LOWER_EQUAL).value);
-            case BIGGER_EQUAL -> new Operator(consume(TokenType.BIGGER_EQUAL).value);
-            case IS -> new Operator(consume(TokenType.IS).value);
+        switch (tokens.get(current).type) {
+            case EQUAL -> {
+                return new Operator(consume(TokenType.EQUAL).value);
+            }
+            case NOT_EQUAL -> {
+                return new Operator(consume(TokenType.NOT_EQUAL).value);
+            }
+            case LOWER -> {
+                return new Operator(consume(TokenType.LOWER).value);
+            }
+            case BIGGER -> {
+                return new Operator(consume(TokenType.BIGGER).value);
+            }
+            case LOWER_EQUAL -> {
+                return new Operator(consume(TokenType.LOWER_EQUAL).value);
+            }
+            case BIGGER_EQUAL -> {
+                return new Operator(consume(TokenType.BIGGER_EQUAL).value);
+            }
+            case IS -> {
+                return new Operator(consume(TokenType.IS).value);
+            }
             default -> {
                 error("invalid conditional operator.", tokenInfo());
                 return null;
