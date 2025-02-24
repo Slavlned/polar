@@ -102,7 +102,7 @@ public class Parser {
             case IS -> new Operator(consume(TokenType.IS).value);
             default -> {
                 error("invalid conditional operator.", tokenInfo());
-                yield null;
+                return null;
             }
         };
     }
